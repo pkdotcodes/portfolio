@@ -369,15 +369,6 @@ export const technologies = [
     },
   },
   {
-    key: "neovim",
-    name: "Neovim",
-    active: false,
-    icon: {
-      src: "/img/logos/neovim.svg",
-      alt: "Neovim Icon",
-    },
-  },
-  {
     key: "nextjs",
     name: "Next.js",
     active: false,
