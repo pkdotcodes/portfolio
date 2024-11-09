@@ -1,0 +1,73 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Heading from "../../components/Headings/Heading.vue";
+import Paragraph from "../../components/Paragraph.vue";
+import Section from "../../components/Section.vue";
+import Wrapper from "../../components/Wrapper.vue";
+
+import { projects } from "../../data/projects.js";
+const { project } = Astro.params;
+
+export async function getStaticPaths() {
+  return projects.map((project) => ({
+    params: { project: project.slug.toString() },
+    props: { projectData: project },
+  }));
+}
+
+const { projectData } = Astro.props;
+
+if (!projectData) {
+  return Astro.redirect("/404");
+}
+---
+
+<Layout
+  title="Pascal Kraupner - Full Stack Web Developer | About me"
+  pageUrl="https://www.pascalkraupner.dev/about-me"
+>
+  <Wrapper>
+    <Heading level={1} size={1} cursor={true} text="Projekt Details" />
+    <Section id="project-details">
+      <div class="mb-16 mt-16 flex flex-col items-center md:flex-row">
+        <img
+          src={projectData.cardImage.src}
+          alt="game image"
+          class="w-1/2 max-w-5xl rounded-sm"
+        />
+        <div class="my-5 w-1/2 self-start md:my-0 md:ml-24">
+          <div class="flex items-baseline md:items-center">
+            <h2 class="text-xl font-semibold md:text-4xl">
+              {projectData.name}
+            </h2>
+          </div>
+          <div>
+            <a
+              target="_blank"
+              :href="project.livePreviewLink"
+              class="mx-2 transition duration-500 hover:text-primary-color"
+            >
+              <i
+                class="fa-solid fa-arrow-up-right-from-square ml-1 mr-2 text-base"
+              ></i>
+              <span>Live-Preview</span>
+            </a>
+            |
+            <a
+              target="_blank"
+              :href="project.githubRepositoryLink"
+              class="mx-2 transition duration-500 hover:text-primary-color"
+              ><i class="fa-brands fa-github ml-1 mr-2 text-base"></i>
+              <span>Quellcode</span>
+            </a>
+          </div>
+          <div class="mt-5">
+            <Paragraph>
+              {projectData.longDescription}
+            </Paragraph>
+          </div>
+        </div>
+      </div>
+    </Section>
+  </Wrapper>
+</Layout>

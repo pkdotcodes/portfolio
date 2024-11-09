@@ -2,7 +2,6 @@
 import "@fontsource/mulish";
 import "../styles/index.css";
 import "@fortawesome/fontawesome-free/css/all.css";
-import { ImageSupportDetection } from "astro-imagetools/components";
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 
@@ -30,10 +29,14 @@ const {
 } = Astro.props;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="scroll-smooth">
   <head>
-    <script defer data-domain="pascalkraupner.dev" src="https://plausible.pascalkraupner.dev/js/script.hash.outbound-links.js"></script>
+    <script
+      defer
+      data-domain="pascalkraupner.dev"
+      src="https://plausible.pascalkraupner.dev/js/script.hash.outbound-links.js"
+    ></script>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
     <meta name="keywords" content={keywords} />
@@ -49,20 +52,18 @@ const {
     <meta property="og:url" content={pageUrl} />
     <meta property="og:image" content="/img/logo.png" />
 
-
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#7af500">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#7af500" />
 
     <title>{title}</title>
-    <ImageSupportDetection />
   </head>
   <body
-    class="bg-primary text-primary text-base font-['Mulish'] flex flex-col min-h-screen"
+    class="flex min-h-screen flex-col bg-primary font-['Mulish'] text-base text-primary"
   >
     <Navbar />
     <main>

@@ -2,25 +2,24 @@
 import Terminal from "./Terminal.astro";
 import Socials from "./Socials.astro";
 import CtaButtons from "./CtaButtons.astro";
-import { BackgroundImage } from "astro-imagetools/components";
 ---
 
-<BackgroundImage src="/img/server_room_hero_bg.jpg">
+<div class="bg-[url('/img/server_room_hero_bg.jpg')]">
   <div class="bg-gradient-to-b from-transparent to-dark-color">
     <div class="flex justify-around">
-      <div class="w-full sm:w-3/5 self-center">
+      <div class="w-full self-center sm:w-3/5">
         <Terminal />
       </div>
-      <div class="w-2/5 max-w-5xl self-end hidden sm:block">
+      <div class="hidden w-2/5 max-w-5xl self-end sm:block">
         <img
-          class="w-full h-auto gradient-mask-b-90"
+          class="h-auto w-full gradient-mask-b-90"
           src="/img/pascal_arms_crossed.png"
           alt="Pascal Kraupner Logo"
         />
       </div>
     </div>
   </div>
-</BackgroundImage>
+</div>
 
 <CtaButtons />
 <Socials />
