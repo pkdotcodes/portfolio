@@ -3,7 +3,7 @@ export const tools = [
     key: "neovim",
     name: "Neovim",
     description:
-      "A highly extensible, open-source text editor that enhances the capabilities of Vim, designed for efficient editing and seamless integration with modern plugins.",
+      "Ein hochgradig erweiterbarer, quelloffener Texteditor, der die Funktionen von Vim erweitert und für effizientes Editieren sowie nahtlose Integration moderner Plugins entwickelt wurde.",
     active: true,
     icon: {
       src: "/img/logos/neovim.svg",
@@ -15,7 +15,7 @@ export const tools = [
     key: "archlinux",
     name: "Arch Linux",
     description:
-      "A lightweight and flexible Linux distribution known for its simplicity and rolling-release system, designed for advanced users who prefer customization and control.",
+      "Eine leichtgewichtige und flexible Linux-Distribution, die für ihre Einfachheit und ihr Rolling-Release-System bekannt ist, entwickelt für fortgeschrittene Benutzer, die Anpassung und Kontrolle bevorzugen.",
     active: true,
     icon: {
       src: "/img/logos/archlinux.svg",
@@ -27,7 +27,7 @@ export const tools = [
     key: "kitty",
     name: "Kitty",
     description:
-      "A fast, feature-rich, and GPU-accelerated terminal emulator that supports modern terminal features and efficient workflows.",
+      "Ein schneller, funktionsreicher und GPU-beschleunigter Terminalemulator, der moderne Terminal-Funktionen und effiziente Workflows unterstützt.",
     active: true,
     icon: {
       src: "/img/logos/kitty.svg",
@@ -39,7 +39,7 @@ export const tools = [
     key: "tmux",
     name: "tmux",
     description:
-      "A terminal multiplexer that allows you to run multiple terminal sessions from a single window, offering session persistence and efficient workspace management.",
+      "Ein Terminal-Multiplexer, der es ermöglicht, mehrere Terminal-Sitzungen in einem einzigen Fenster auszuführen und Sitzungsbeständigkeit sowie effizientes Arbeitsflächenmanagement bietet.",
     active: true,
     icon: {
       src: "/img/logos/tmux.svg",
