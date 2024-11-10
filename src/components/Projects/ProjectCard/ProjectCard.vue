@@ -18,7 +18,7 @@ const { project } = defineProps({
       <div class="px-4 border-t border-default">
         <div class="flex justify-between items-center my-5">
           <h3 class="text-xl font-semibold5 hover:text-primary-color transition duration-500">
-            <a :href="project.livePreviewLink">{{ project.name }}</a>
+            <a :href="`/projects/${project.slug}`">{{ project.name }}</a>
           </h3>
           <div>
             <a target="_blank" :href="project.livePreviewLink"

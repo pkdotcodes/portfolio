@@ -33,19 +33,19 @@ if (!projectData) {
         <img
           src={projectData.cardImage.src}
           alt="game image"
-          class="w-1/2 max-w-5xl rounded-sm"
+          class="mt-2 w-1/2 max-w-5xl rounded-sm md:self-start"
         />
-        <div class="my-5 w-1/2 self-start md:my-0 md:ml-24">
-          <div class="flex items-baseline md:items-center">
+        <div class="my-5 w-1/2 md:my-0 md:ml-24 md:self-start">
+          <div class="flex">
             <h2 class="text-xl font-semibold md:text-4xl">
               {projectData.name}
             </h2>
           </div>
-          <div>
+          <div class="mt-4">
             <a
               target="_blank"
-              :href="project.livePreviewLink"
-              class="mx-2 transition duration-500 hover:text-primary-color"
+              href={projectData.livePreviewLink}
+              class="mr-2 transition duration-500 hover:text-primary-color"
             >
               <i
                 class="fa-solid fa-arrow-up-right-from-square ml-1 mr-2 text-base"
@@ -55,8 +55,8 @@ if (!projectData) {
             |
             <a
               target="_blank"
-              :href="project.githubRepositoryLink"
-              class="mx-2 transition duration-500 hover:text-primary-color"
+              href={projectData.githubRepositoryLink}
+              class="ml-2 transition duration-500 hover:text-primary-color"
               ><i class="fa-brands fa-github ml-1 mr-2 text-base"></i>
               <span>Quellcode</span>
             </a>
