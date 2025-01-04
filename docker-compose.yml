@@ -1,4 +1,4 @@
-version: '3'
+version: "3"
 
 services:
   portfolio-app:
@@ -10,14 +10,16 @@ services:
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.portfolio.entrypoints=websecure"
-      - "traefik.http.routers.portfolio.rule=Host(`pascalkraupner.dev`) || Host(`www.pascalkraupner.dev`) || Host(`pascalkraupner.de`)"
+      - "traefik.http.routers.portfolio.rule=Host(`pascalkraupner.dev`) || Host(`www.pascalkraupner.dev`) || Host(`pascalkraupner.de`)|| Host(`pk.codes`)"
       - "traefik.http.middlewares.portfolio-redirect.redirectregex.regex=^https://pascalkraupner.dev/(.*)"
       - "traefik.http.middlewares.portfolio-redirect.redirectregex.replacement=https://www.pascalkraupner.dev/$${1}"
-      - "traefik.http.middlewares.domain-redirect.redirectregex.regex=^https://pascalkraupner.de/(.*)"
-      - "traefik.http.middlewares.domain-redirect.redirectregex.replacement=https://www.pascalkraupner.dev/$${1}"
+      - "traefik.http.middlewares.de-domain-redirect.redirectregex.regex=^https://pascalkraupner.de/(.*)"
+      - "traefik.http.middlewares.de-domain-redirect.redirectregex.replacement=https://www.pascalkraupner.dev/$${1}"
+      - "traefik.http.middlewares.codes-domain-redirect.redirectregex.regex=^https://pk.codes/(.*)"
+      - "traefik.http.middlewares.codes-domain-redirect.redirectregex.replacement=https://www.pascalkraupner.dev/$${1}"
       - "traefik.http.routers.portfolio.tls.certresolver=lets-encr"
-      - "traefik.http.routers.portfolio.middlewares=portfolio-redirect"
-      - "traefik.http.routers.portfolio.middlewares=domain-redirect"
+      - "traefik.http.routers.portfolio.middlewares=portfolio-redirect,de-domain-redirect,codes-domain-redirect"
+
 networks:
   default:
     name: proxy

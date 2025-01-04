@@ -6,6 +6,7 @@ import { projects } from "../../data/projects.js"
 </script>
 
 <template>
+  <!--
   <Section id="projects">
     <Heading :level="2" :size="1" text="Projekte" :cursor="true" />
 
@@ -13,11 +14,10 @@ import { projects } from "../../data/projects.js"
       <ProjectCard v-for="project in projects" :key="project.id" :project="project" />
     </div>
 
-    <!--
     TODO: Implement dedicated projects overview page
             <div class="flex justify-center mb-20">
                 <PrimaryButton text="Alle Projekte" href="/projects" icon="diagram-project" />
             </div>
-    -->
   </Section>
+    -->
 </template>

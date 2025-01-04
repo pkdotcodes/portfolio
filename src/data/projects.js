@@ -3,7 +3,7 @@ export const projects = [
     slug: "enchantertain",
     name: "Enchantertain",
     livePreviewLink: "https://www.enchantertain.com/",
-    githubRepositoryLink: "https://github.com/PascalKraupner/enchantertain",
+    githubRepositoryLink: "https://github.com/pkdotcodes/enchantertain",
     cardImage: {
       src: "/img/projects/enchantertain_preview.jpg",
       alt: "enchantertain preview",
