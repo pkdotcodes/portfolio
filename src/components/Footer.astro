@@ -3,13 +3,35 @@ let currentYear = new Date().getFullYear();
 ---
 
 <footer
-  class="mt-auto bg-secondary border-default border-t h-14 flex flex-col justify-center items-center text-sm relative w-full left-0 bottom-0"
+  class="relative bottom-0 left-0 mt-auto flex w-full flex-col border-t border-default text-sm"
 >
-  <div>
-    <p>&copy; Pascal Kraupner {currentYear}</p>
+  <div class="w-full bg-secondary px-16">
+    <div class="my-4 flex items-center border-b pb-2">
+      <span class="flex-1 text-xl md:text-3xl"> Socials</span>
+      <div class="flex flex-1 gap-4">
+        <a
+          href="https://www.linkedin.com/in/pascal-kraupner-022b5322b/"
+          target="_blank"
+          ><i class="fa-brands fa-linkedin-in text-xl md:text-3xl"></i>
+        </a>
+        <a href="https://github.com/pkdotcodes" target="_blank"
+          ><i class="fa-brands fa-github text-xl md:text-3xl"></i>
+        </a>
+        <a href="https://twitter.com/pkdotcodes" target="_blank"
+          ><i class="fa-brands fa-x-twitter text-xl md:text-3xl"></i>
+        </a>
+        <a href="mailto:mail@pascalkraupner.dev"
+          ><i class="fas fa-envelope text-xl md:text-3xl"></i>
+        </a>
+      </div>
+    </div>
+
+    <div class="mb-6 flex flex-col">
+      <a href="/imprint">Impressum</a>
+      <a href="/privacy">Datenschutz</a>
+    </div>
   </div>
-  <div>
-    <a href="/imprint">Impressum</a> |
-    <a href="/privacy">Datenschutz</a>
+  <div class="bg-secondary-color-darker py-4">
+    <p class="text-center">&copy; 2023 - {currentYear} Pascal Kraupner</p>
   </div>
 </footer>

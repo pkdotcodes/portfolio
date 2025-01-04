@@ -1,71 +1,79 @@
 ---
-import { Img } from "astro-imagetools/components";
+import { Image } from "astro:assets";
+import logo from "../assets/images/logo.png";
 ---
 
-<nav class="bg-secondary">
+<nav class="border-b border-default bg-secondary">
   <div
-    class="flex justify-between items-center px-3 py-1 border-default border-p h-14 max-w-screen-2xl m-auto"
+    class="border-p m-auto flex h-14 max-w-screen-2xl items-center justify-between border-default px-3 py-1"
   >
     <a href="/">
-      <Img
-        attributes={{ img: { class: "w-12 h-auto" } }}
-        src="img/logo.png"
-        alt="Pascal Kraupner Logo"
-      />
+      <Image class="h-auto w-12" src={logo} alt="Pascal Kraupner Logo" />
     </a>
-    <a href="#" data-mobile-menu-button class="md:hidden">
+    <a href="#" data-mobile-menu-button class="z-30 md:hidden">
       <span
-        class="bg-light-color h-1 w-6 block rounded-md mb-1 transition-transform"
+        class="mb-1 block h-1 w-6 rounded-md bg-light-color transition-transform"
       ></span>
-      <span class="bg-light-color h-1 w-6 block rounded-md mb-1"></span>
+      <span class="mb-1 block h-1 w-6 rounded-md bg-light-color"></span>
       <span
-        class="bg-light-color h-1 w-6 block rounded-md mt-1 transition-transform"
+        class="mt-1 block h-1 w-6 rounded-md bg-light-color transition-transform"
       ></span>
     </a>
-    <ul class="hidden items-center space-x-4 md:flex font-bold">
+    <ul class="hidden items-center space-x-4 font-bold md:flex">
       <li>
         <a
           href="/"
-          class="text-default hover:text-primary-color transition-colors duration-500"
+          class="text-default transition-colors duration-500 hover:text-primary-color"
           >Home</a
         >
       </li>
+      <!--
       <li>
         <a
           href="/#projects"
-          class="text-default hover:text-primary-color transition-colors duration-500"
+          class="text-default transition-colors duration-500 hover:text-primary-color"
           >Projekte</a
+        >
+      </li>
+      --->
+      <li>
+        <a
+          href="/about-me"
+          class="text-default transition-colors duration-500 hover:text-primary-color"
+          >Über mich</a
         >
       </li>
       <li>
         <a
-          href="/about-me"
-          class="text-default hover:text-primary-color transition-colors duration-500"
-          >Über mich</a
+          href="/my-toolbox"
+          class="text-default transition-colors duration-500 hover:text-primary-color"
+          >Meine Toolbox</a
         >
       </li>
     </ul>
-    <div class="w-12 hidden md:block">&nbsp;</div>
+    <div class="hidden w-12 md:block">&nbsp;</div>
   </div>
 </nav>
+
 <div
-  class="z-20 fixed w-full h-full overflow-hidden opacity-0 invisible transition-all duration-500 bg-secondary"
+  class="invisible fixed z-20 h-full w-full overflow-hidden bg-secondary opacity-0 transition-all duration-500"
   data-mobile-menu
 >
   <nav
-    class="text-4xl flex flex-col items-center gap-5 mt-5"
+    class="mt-5 flex flex-col items-center gap-5 text-4xl"
     aria-label="mobile-menu"
   >
     <a href="/">Home</a>
-    <a href="/#projects">Projekte</a>
+    <!-- <a href="/#projects">Projekte</a> --->
     <a href="/about-me">Über Mich</a>
+    <a href="/my-toolbox">Meine Toolbox</a>
   </nav>
 </div>
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     const mobileMenu = document.querySelector("[data-mobile-menu]");
     const mobileMenuButton = document.querySelector(
-      "[data-mobile-menu-button]"
+      "[data-mobile-menu-button]",
     );
     const toggleMenu = () => {
       mobileMenu?.classList.toggle("opacity-0");
